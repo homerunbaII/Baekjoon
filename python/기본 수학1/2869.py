@@ -24,5 +24,5 @@
 import math
 a, b, v = map(int, input().split())  # 9 7 18
 one_day_up = a - b  # 2
-result = math.ceil((v - a) / one_day_up) + 1  # 2 4 6 8 10 19
+result = math.ceil((v - a) / one_day_up) + 1  # v - a = 9 ### 2 4 6 8 10 19
 print(result)
