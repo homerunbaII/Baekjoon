@@ -9,3 +9,15 @@ while (n):  # 29
         print(int(a + (n - a * 5) / 3))
         break
     i += 1
+
+# N = int(input())
+# cnt = 0 # 설탕 봉지 수
+# while N >= 0:
+#     if N % 5 == 0:
+#         cnt += (N // 5)
+#         print(cnt)
+#         break
+#     N -= 3
+#     cnt += 1
+# else:
+#     print(-1)
