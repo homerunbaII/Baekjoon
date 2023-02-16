@@ -1,7 +1,12 @@
+import sys
+
+input = sys.stdin.readline
+
+
 def find_primenumber(num):  # 소수 찾는 메서드
     if (num == 1):
         return 0
-    for i in range(2, int(num ** 0.5)):
+    for i in range(2, int(num ** 0.5) + 1):
         if (num % i == 0):
             return 0
     return num
@@ -31,7 +36,7 @@ for i in range(t):
     location = primenumber_list.index(middle_primenum_1)  # 근사소수값의 인덱스 위치 반환
     while (True):
         middle_primenum_2 = num - middle_primenum_1  # 소수
-        if middle_primenum_2 in primenumber_list:
+        if find_primenumber(middle_primenum_2) > 0:
             print(middle_primenum_1, middle_primenum_2)
             break
         else:
