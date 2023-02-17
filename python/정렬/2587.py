@@ -5,5 +5,5 @@ for i in range(5):
 
 sorted_list = sorted(num_list)
 
-print(sum(sorted_list) / 5)
+print(int(sum(sorted_list) / 5))
 print(sorted_list[2])
