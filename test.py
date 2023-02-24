@@ -1,3 +1,1 @@
-a = list(input())
-
-print(len(a))
+print(3 % 1)
