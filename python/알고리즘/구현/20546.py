@@ -1,12 +1,3 @@
-def junhyun(m, price_list):
-    stock = 0
-    for i in price_list:
-        stock += m // i
-        m %= i
-    m += stock * price_list[13]
-    return m
-
-
 # def sungmin(m, price_list):
 #     stock = 0  # 주식개수
 #     cnt = [0, 0]  # 0번째 index는 몇일 연속인지, 1번째 index는 상승인지 하강인지
@@ -38,6 +29,15 @@ def junhyun(m, price_list):
 #     m += stock * price_list[13]  # 마지막날 주가
 #     return m
 
+def junhyun(m, price_list):
+    stock = 0
+    for i in price_list:
+        stock += m // i
+        m %= i
+    m += stock * price_list[13]
+    return m
+
+
 def sungmin(m, price_list):
     stock = 0
     for i in range(len(price_list) - 4):
@@ -47,7 +47,6 @@ def sungmin(m, price_list):
         if price_list[i] < price_list[i + 1] < price_list[i+2] < price_list[i+3]:  # 3인 연속 상승한다면
             m += price_list[i+3] * stock
             stock = 0
-        print(m, stock, price_list[i + 3])
     m += price_list[-1] * stock
     return m
 
@@ -58,7 +57,6 @@ price_list = list(map(int, input().split()))  # 14일치 주가
 m_j = junhyun(m, price_list)
 m_s = sungmin(m, price_list)
 
-print(m_j, m_s)
 if (m_j > m_s):
     print("BNP")
 elif m_j < m_s:
