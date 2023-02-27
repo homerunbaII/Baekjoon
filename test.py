@@ -1,1 +1,3 @@
-print(' ' * 0, )
+n = input()
+
+print(n)
