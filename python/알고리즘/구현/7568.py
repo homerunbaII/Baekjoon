@@ -12,4 +12,4 @@ for i in range(len(dlist)):  # 0123456
     for j in range(len(dlist)):  # 0123456
         if (dlist[i][0] < dlist[j][0] and dlist[i][1] < dlist[j][1]):
             cnt += 1
-    print(cnt, end='')
+    print(cnt, end=' ')

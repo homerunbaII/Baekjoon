@@ -1,3 +1,10 @@
-n = input()
+def factorial(n):
+    if (n <= 1):
+        return 1
+    result = n * factorial(n-1)
+    return result
 
-print(n)
+
+n = int(input())
+
+print(factorial(n))
