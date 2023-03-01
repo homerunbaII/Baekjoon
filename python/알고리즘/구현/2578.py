@@ -38,6 +38,3 @@ for i in range(5):
             break
     if (breaker == True):  # 이중 for문 탈출
         break
-
-
-print(bingo_list)
