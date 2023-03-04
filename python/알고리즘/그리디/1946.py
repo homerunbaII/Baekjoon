@@ -13,7 +13,7 @@ for _ in range(t):
     new_list.sort(key=lambda x: x[0])  # 서류 성적 순위로 정렬
     min_grade = new_list[0][1]  # 4 면접 성적 최소 기준
     for i in range(len(new_list)):
-        if min_grade > new_list[i][1]:  # 현재 면접최소성적보다 높은성적(작은 숫자)가 나온다면
+        if min_grade > new_list[i][1]:  # 현재 면접최소성적보다 x높은성적(작은 숫자)가 나온다면
             min_grade = new_list[i][1]
             count += 1
     print(count)

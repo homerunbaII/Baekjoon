@@ -1,10 +1,7 @@
-def factorial(n):
-    if (n <= 1):
-        return 1
-    result = n * factorial(n-1)
-    return result
+from collections import deque
 
+que = deque([1, 2, 3, 4, 5, 6, 7, 8])
 
-n = int(input())
+que.rotate(1)
 
-print(factorial(n))
+print(list(que))
