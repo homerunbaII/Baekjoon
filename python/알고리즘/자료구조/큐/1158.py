@@ -9,4 +9,4 @@ while (que):
     que.rotate(-(k-1))
     result.append(que.popleft())
 
-print("<" + result[1:-1] + ">")
+print("<" + str(result)[1:-1] + ">")

@@ -1,11 +1,12 @@
 from collections import deque
+import sys
 
 que = deque([])
 
 n = int(input())
 
 for i in range(n):
-    order = input().split()
+    order = sys.stdin.readline().split()
     if order[0] == 'push_front':
         que.appendleft(order[1])
     if order[0] == 'push_back':
