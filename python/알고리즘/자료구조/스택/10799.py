@@ -1,6 +1,4 @@
-import sys
-
-stick = sys.stdin.readline().rstrip()
+stick = input()
 
 stack = ['(']
 total = 0
