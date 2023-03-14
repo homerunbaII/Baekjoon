@@ -42,5 +42,6 @@ for i in range(len(ans)):
 ans = set(ans)
 ans = list(ans)
 ans.sort()
+
 for i in ans:
     print(i)
