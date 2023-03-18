@@ -22,7 +22,7 @@ heap = []
 n = int(input())
 
 for i in range(n):
-    x = int(sys.stdin.readline)
+    x = int(sys.stdin.readline())
     if x == 0:
         if heap:
             print(-heappop(heap))

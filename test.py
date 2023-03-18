@@ -1,5 +1,16 @@
-li = [1, 'F', 5, 5, 7, 7, 8]
-remove_set = {'F', 5}
+import sys
+import heapq
 
-li = [i for i in li if i not in remove_set]
-print(li)
+n = int(input())
+q = []
+
+for i in range(n):
+    a = int(sys.stdin.readline().rstrip())
+    print(q)
+    if a != 0:
+        heapq.heappush(q, (abs(a), a))
+    else:
+        if not q:
+            print(0)
+        else:
+            print(heapq.heappop(q)[1])
