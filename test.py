@@ -1,16 +1,3 @@
-import sys
-import heapq
+n = [i for i in range(0, 1, 0)]
 
-n = int(input())
-q = []
-
-for i in range(n):
-    a = int(sys.stdin.readline().rstrip())
-    print(q)
-    if a != 0:
-        heapq.heappush(q, (abs(a), a))
-    else:
-        if not q:
-            print(0)
-        else:
-            print(heapq.heappop(q)[1])
+print(n)
