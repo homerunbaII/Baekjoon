@@ -1,3 +1,6 @@
-n = [i for i in range(0, 1, 0)]
-
-print(n)
+i = 0
+num = 5
+n = 8
+while (num - i > 0 and num + i < n):
+    i += 1
+    print(i)
