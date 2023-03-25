@@ -27,7 +27,7 @@ if flag:
     for i in range(n):
         for j in range(n):
             if mine_list[i][j] == '*':
-                check_list[i][j] == '*'
+                check_list[i][j] = '*'
 
 for i in check_list:
     print(''.join(i))
