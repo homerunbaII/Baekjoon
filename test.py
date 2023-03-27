@@ -1,6 +1,8 @@
-a = []
+import math
 
-for i in range(10):
-    a.append(i)
+n = int(input())
 
-print(a)
+print(math.sqrt(n))
+
+if math.sqrt(n) == int:
+    print(n)
