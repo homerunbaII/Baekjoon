@@ -1,8 +1,9 @@
-import math
-
 n = int(input())
+r = 0
 
-print(math.sqrt(n))
+for i in range(1, n):
+    for j in range(i+1, n):
+        for k in range(1, j+1):
+            r = r+1
 
-if math.sqrt(n) == int:
-    print(n)
+print(r)
