@@ -25,6 +25,7 @@ for i in range(4, n + 1):
         energy_max = energy
         flag = i
 
+print(dp, 'dp')
 print(energy_max, 'energy max', gj, 'gj0')
 
 if energy_max > gj:
@@ -34,7 +35,7 @@ if energy_max > gj:
             dp[i] = dp[flag] + jump[i-1][0]
         else:
             dp[i] = min(dp[i - 1] + jump[i - 1][0], dp[i - 2] +
-                        jump[i - 2][1])  # 먼저 작은 점프 큰 점프로만 dp를 구한다
+                        jump[i - 2][1])
 
 print(dp)
 print(dp[n])

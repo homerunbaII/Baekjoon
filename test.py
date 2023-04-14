@@ -1,19 +1,42 @@
-def g(n):
-    if n <= 1:
-        return n
+left, right = input().split()
+strings = list(input())
+
+keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+mo = 'yuiophjklbnm'
+
+xl, yl, xr, yr = None, None, None, None
+
+for i in range(len(keyboard)):
+    if left in keyboard[i]:
+        xl = i
+        yl = keyboard[i].index(left)
+
+    if right in keyboard[i]:
+        xr = i
+        yr = keyboard[i].index(right)
+
+time = 0
+for string in strings:
+    time += 1
+    if string in mo:
+        for i in range(len(keyboard)):
+            if string in keyboard[i]:
+                nx = i
+                ny = keyboard[i].index(string)
+
+                time += abs(nx - xr) + abs(ny - yr)
+                xr = nx
+                yr = ny
+                break
     else:
-        return (5 * g(n-1) - 6 * g(n - 2))
+        for i in range(len(keyboard)):
+            if string in keyboard[i]:
+                nx = i
+                ny = keyboard[i].index(string)
 
+                time += abs(nx - xl) + abs(ny - yl)
+                xl = nx
+                yl = ny
+                break
 
-print(g(1))
-print(g(2))
-print(g(3))
-print(g(4))
-print(g(5))
-print(g(6))
-print(g(7))
-
-27 - 8
-81 - 16
-243 - 32
-729 - 64
+print(time)
