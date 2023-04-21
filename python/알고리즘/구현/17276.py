@@ -1,33 +1,41 @@
+import copy
+import sys
+
+input = sys.stdin.readline
+
 t = int(input())
 
 
-def rotate_45(arr):
+def rotate_45(arr, new_arr):
     for j in range(n):
-        arr[j][(n+1)//2-1], arr[j][n-1-j], arr[(n+1)//2 -
-                                               1][j], arr[j][j] = arr[j][j], arr[j][(n+1)//2-1], arr[j][n-1-j], arr[(n+1)//2-1][j]
-    return arr
+        new_arr[j][j] = arr[(n-1)//2][j]
+        new_arr[j][(n-1)//2] = arr[j][j]
+        new_arr[j][n-1-j] = arr[j][(n-1)//2]
+        new_arr[(n-1)//2][n-1 - j] = arr[j][n-1-j]
 
 
-def rotate_M45(arr):
-
-    pass
+def rotate_R45(arr, new_arr):
+    for j in range(n):
+        new_arr[j][j] = arr[j][(n-1)//2]
+        new_arr[j][(n-1)//2] = arr[j][n-1-j]
+        new_arr[j][n-1-j] = arr[(n-1)//2][n-1-j]
+        new_arr[(n-1)//2][n-1 - j] = arr[n-1-j][n-1-j]
 
 
 for i in range(t):
     n, d = map(int, input().split())
     arr = []
     repeat = d // 45
-    for i in range(n):
+    for j in range(n):
         arr.append(list(map(int, input().split())))
-        pass
-    if repeat > 0:
+    new_arr = copy.deepcopy(arr)
+    if d > 0:
         for _ in range(repeat):
-            arr = list(rotate_45(arr))
-    if d == -45:
-        pass
-
-print(arr)
-# temp1.append(arr[j][j])
-# temp2.append(arr[j][(n+1)//2-1])
-# temp3.append(arr[j][n-1-j])
-# temp4.append(arr[(n+1)//2-1][j])
+            rotate_45(arr, new_arr)
+            arr = copy.deepcopy(new_arr)
+    if d < 0:
+        for _ in range(abs(repeat)):
+            rotate_R45(arr, new_arr)
+            arr = copy.deepcopy(new_arr)
+    for k in new_arr:
+        print(*k)
