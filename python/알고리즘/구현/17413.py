@@ -3,7 +3,6 @@ new_char = ''
 temp_char = ''
 
 flag = 0
-gap_flag = 0
 
 for i in range(len(char)):
     if flag == 0 and char[i] == ' ':
@@ -22,7 +21,6 @@ for i in range(len(char)):
             temp_char += char[i]
     if char[i] == '>':
         flag = 0
-    print(temp_char)
 
 new_char += temp_char[::-1]
 

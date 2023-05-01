@@ -36,7 +36,6 @@ def t4(n):
 for i in range(m):
     if order_list[i][0] == 1:
         t1(order_list[i][1], order_list[i][2])
-        print(1)
     if order_list[i][0] == 2:
         t2(order_list[i][1], order_list[i][2])
     if order_list[i][0] == 3:

@@ -38,5 +38,3 @@ for string in strings:
                 xl = nx
                 yl = ny
                 break
-
-print(time)
