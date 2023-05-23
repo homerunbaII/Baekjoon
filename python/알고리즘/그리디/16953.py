@@ -10,7 +10,6 @@ while (b != a):
         b //= 10
     if temp == b:
         cnt = -1
-        print(999)
         break
 
 

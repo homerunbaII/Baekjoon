@@ -1,8 +1,6 @@
 n = int(input())
 br_list = list(input())
-b_cnt = 0
-r_cnt = 0
-cnt = 0
+cnt = 1
 
 for i in range(n):
     if i == 0:
@@ -14,4 +12,4 @@ for i in range(n):
         if br_list[i - 1] == 'R' and br_list[i] == 'B':
             cnt += 1
 
-print(cnt + 1)
+print(cnt)
