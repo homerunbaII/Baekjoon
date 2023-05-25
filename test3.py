@@ -1,20 +1,23 @@
 import sys
+import heapq
 
+
+heap = []
 input = sys.stdin.readline
-
 n = int(input())
-meetlist = []
-
+arr = []
 for i in range(n):
-    meetlist.append(list(map(int, input().split())))
+    a, b = map(int, input().split())
+    arr.append([a, b])
+arr.sort(key=lambda x: x[0])
+heapq.heappush(heap, arr[0][1])  # 첫번째 강의가 끝나는 시간을 넣음
+print(arr)
+for i in range(1, n):
+    print(heap)
+    if heap[0] > arr[i][0]:
+        heapq.heappush(heap, arr[i][1])
+    else:
+        heapq.heappop(heap)
+        heapq.heappush(heap, arr[i][1])
 
-meetlist.sort(key=lambda x: (x[1], x[0]))
-cnt = 1
-endtime = meetlist[0][1]  # 4
-
-for i in meetlist:
-    if endtime <= i[0]:
-        cnt += 1
-        endtime = i[1]
-
-print(cnt)
+print(len(heap))
