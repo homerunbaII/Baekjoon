@@ -14,6 +14,7 @@ for i in s:
         if m > 0:
             max += str(5*(10**m))
             min += str(10**m + 5)
+
         else:
             max += '5'
             min += '5'
