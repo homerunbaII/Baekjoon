@@ -12,11 +12,8 @@ for i in range(1, n + 1):
         temp = i
     while (i):
         temp += (i % 10)
-        print(i)
         i //= 10
-    print(temp)
     if temp == n:
-        print(1234)
         flag = 1
         answer = check
         break
