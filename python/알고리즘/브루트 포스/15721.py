@@ -3,7 +3,8 @@ t = int(input())
 x = int(input())
 
 bundegi = []
-bun = degi = 1
+bun = 1
+degi = 1
 n = 0
 
 while True:
