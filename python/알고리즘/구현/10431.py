@@ -7,8 +7,6 @@ for i in range(p):
     step = 0
     for i in range(1,21):
         for j in range(i + 1,21):
-            
             if test_list[i] > test_list[j]:
                 step +=1
-                print(test_list[i], test_list[j], step)
     print(test_list[0], step)
