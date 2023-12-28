@@ -1,10 +1,9 @@
-import sys
 t = int(input())
 
 for i in range(t):
     n = int(input())
-    rank_list = list(map(int, sys.stdin.readline().split()))
-    real_nums = []
+    rank_list = list(map(int, input().split()))
+    real_teams = []
     for j in range(1,201):
         checker = 0
         for k in rank_list:
@@ -14,9 +13,9 @@ for i in range(t):
             while j in rank_list:
                 rank_list.remove(j)
         else:
-            real_nums.append(j)
+            real_teams.append(j)
     winner_list = []
-    for j in real_nums:
+    for j in real_teams:
         player_cnt = 0
         team_score_tmp = 0
         for k in range(len(rank_list)):
@@ -31,18 +30,3 @@ for i in range(t):
                     break
     team = sorted(winner_list, key=lambda x:(x[1], x[2]))
     print(team[0][0])
-
-
-
-    
-
-
-
-
-
-    
-
-
-
-
-        
