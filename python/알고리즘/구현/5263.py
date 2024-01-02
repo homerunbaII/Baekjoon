@@ -1,6 +1,6 @@
 paper = int(input())
 
-sheet = [[0] * 100] * 100 
+sheet = [[0] * 100 for _ in range(100)]
 
 for i in range(paper):
     x , y = map(int, input().split())
