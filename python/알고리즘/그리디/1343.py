@@ -38,8 +38,8 @@
 
 n = input()
 
-n.replace('XXXX','AAAA')
-n.replace('XX', 'BB')
+n = n.replace('XXXX','AAAA')
+n = n.replace('XX', 'BB')
 
 if 'X' in n:
 	print(-1)

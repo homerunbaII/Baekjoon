@@ -1,10 +1,7 @@
 n = int(input())
 height_list = list(map(int, input().split()))
 order_list = [0] * 10
-# 5 3 2 1 4
-# 5
-# 1 2 3 4 5
-# 3 2 1 1 0
+
 
 # i 는 1부터이다
 for i in range(1, n + 1):

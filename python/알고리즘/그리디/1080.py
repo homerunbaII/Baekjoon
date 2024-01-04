@@ -3,7 +3,6 @@ def change3_3(list, start_list_num, start_index_num):
         for j in range(3):
             list[start_list_num + i][start_index_num + j] = 1 - list[start_list_num + i][start_index_num + j]
 
-
 n, m = map(int,input().split())
 
 origin_list = []

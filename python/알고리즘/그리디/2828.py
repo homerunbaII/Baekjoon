@@ -3,7 +3,6 @@ apple = int(input())
 
 basket_location = [i + 1 for i in range(basket)]
 distance = 0
-print(basket_location)
 
 for i in range(apple):
     apple_location = int(input())

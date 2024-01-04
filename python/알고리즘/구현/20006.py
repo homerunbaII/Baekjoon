@@ -15,8 +15,6 @@ try:
         success = 0
         level, nick = input().split()
         level = int(level)
-        if nick == 'exit':
-            break
         for i in room_list:
             if level <= i[0][0] + 10 and level >= i[0][0] - 10 and len(i) < room_max:
                 i.append([level, nick])
@@ -30,7 +28,6 @@ except EOFError:
 for i in range(len(room_list)):
     room_list[i] = sorted(room_list[i], key = lambda x: (x[1],x[0]))
 
-sorted(room_list)
 
 for i in room_list:
     if len(i) == room_max:
