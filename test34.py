@@ -1,2 +1,10 @@
-if '666' in '6666':
-    print(1)
+from itertools import permutations
+
+sets = [1,2,3]
+
+data = itertools.permutation(sets, 2)
+
+print(data)
+
+for i in data:
+   print(i)
