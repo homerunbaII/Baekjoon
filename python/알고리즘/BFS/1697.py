@@ -7,6 +7,8 @@ def dfs(x,y):
     q.append(x)
     while q:
         x = q.popleft()
+        if nx == y:
+            break
         for i in range(3):
             if i < 2:
                 nx = x + dx[i]
@@ -15,11 +17,8 @@ def dfs(x,y):
             if 0 <= nx < 100001:
                 if visited[nx] == 0:
                     visited[nx] = visited[x] + 1
-                    if nx == y:
-                        break
                     q.append(nx)
-        if nx == y:
-            break
+        
 
 
 
