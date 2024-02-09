@@ -1,16 +1,12 @@
-n, m , divide = map(int,input().split())
+n, m , c = map(int,input().split())
 
-def power(a,b,c):
-    if b == 0:
-        print(1)
-        return 1
-    elif b % 2 == 0:
-        y = power(a, b // 2, c)
-        print(y)
-        return (a*a) % c
+def power(a,b):
+    if b == 1:
+        return a % c
     else:
-        y = power(a, (b - 1), c)
-        print(y)
-        return (a *y * y) % c
-    
-print(power(n,m,divide))
+        tmp = power(a,b//2)
+    if b % 2 == 0:
+        return (tmp * tmp) % c
+    else:
+        return (tmp * tmp * a) % c
+print(power(n,m))
