@@ -1,6 +1,3 @@
-from numpy import mean
-import math
-
 n , target = map(int,input().split())
 tree = list(map(int,input().split()))
 
