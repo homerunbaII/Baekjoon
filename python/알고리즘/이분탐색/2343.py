@@ -1,7 +1,7 @@
 total, target = map(int, input().split())
 lec_list = list(map(int, input().split()))
 
-start = min(lec_list)
+start = max(lec_list)
 end = sum(lec_list)
 
 while start <= end:
