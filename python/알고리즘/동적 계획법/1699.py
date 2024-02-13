@@ -10,4 +10,3 @@ for i in range(2, n + 1):
             dp[i] = dp[i - s] + 1
 
 print(dp[n])
-print(dp)
