@@ -32,8 +32,6 @@ def dfs(cnt,lst, before):
                     
 
 dfs(0,[],0)
-k = max(result)
 
-print(f'{k:012}')
 print(max(result))
 print(min(result))
