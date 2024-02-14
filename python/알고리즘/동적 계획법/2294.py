@@ -19,7 +19,6 @@ for i in coin_list:
         n += 1
 
 
-print(dp)
 
 if dp[target] == 10E9:
     print(-1)

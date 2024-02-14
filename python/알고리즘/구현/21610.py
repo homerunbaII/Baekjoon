@@ -17,7 +17,6 @@ dy = [-1, -1, 0, 1, 1, 1, 0, -1]
 
 
 
-## 방향 꼭 -1 해서 주기!!!!!!!!!!!!
 def cloud_move(direction, distance):
     distance = distance % n
     cloud_now = []
@@ -26,7 +25,7 @@ def cloud_move(direction, distance):
         for j in range(n):
             if cloud_loc[i][j] == 1:
                 # 현재 위치 확보
-                cloud_now.append([i,j])
+                cloud_now.append([i,j]) 
     new_cloud_loc = []
     for i in cloud_now:
         x, y = i[0] ,i[1]
@@ -43,7 +42,7 @@ for _ in range(trial):
     ## 구름 이동
     new_cloud_loc = cloud_move(direction, distance)
     cloud_loc = [[0 for _ in range(n)] for _ in range(n)]
-    ## 이동된 위치에 비 1씩 증가                                            주의 나중에 구름이 사라진 칸이 아닌 곳에서 구름이 생겨야 함
+    ## 이동된 위치에 비 1씩 증가          
     for new in new_cloud_loc:
         x,y = new
         water[x][y] += 1
@@ -58,8 +57,8 @@ for _ in range(trial):
                     water[x][y] += 1
     ### 새로운 구름
     cloud_loc = [[0 for _ in range(n)] for _ in range(n)]
-    
     before_cloud_temp = []
+    ### 이전 구름 생성 위치 0으로 초기화 후 저장
     for before in new_cloud_loc:
         x,y = before
         before_cloud_temp.append([x, y, water[x][y]])
@@ -69,12 +68,13 @@ for _ in range(trial):
             if water[i][j] >= 2:
                 water[i][j] -= 2
                 cloud_loc[i][j] = 1     
+    ## -2 연산 후 이전 구름 위치 복구
     for i in range(len(before_cloud_temp)):
         x , y, value = before_cloud_temp[i]
         water[x][y] = value
     
 
-
+### 총합 구하기
 total_water = 0
 for i in water:
     total_water += sum(i)
