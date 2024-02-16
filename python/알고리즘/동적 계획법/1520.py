@@ -20,8 +20,6 @@ def dfs(x,y):
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
-        print(x,y)
-        print(nx,ny)
         if 0<= nx < m and 0 <= ny < n:
             if graph[x][y] > graph[nx][ny]:
                 ways += dfs(nx,ny)

@@ -16,4 +16,4 @@ for i in range(n):
         if dp[i +day] < dp[i] + cost :
             dp[i + day] = dp[i] + cost
 
-print(dp[n])
+print(max(dp))
