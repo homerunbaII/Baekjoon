@@ -1,9 +1,5 @@
-n = 6
-cloud_loc = [[0 for _ in range(n)] for _ in range(n)]
-
-print(cloud_loc)
-print(-7 % 5)
-print(cloud_loc[(-7 % 5)])
-
-
-# 01234
+a = [[1,2],[2,3]]
+b = a[::1]
+b[1] = 1
+print(a)
+print(b)

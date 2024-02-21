@@ -39,7 +39,6 @@ for i in start_team:
         x, y = j
         power += power_list[x][y]
     start_team_power.append(power)
-    print(power)
 
 for i in link_team:
     power = 0

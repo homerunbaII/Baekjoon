@@ -6,11 +6,8 @@ for i in range(n):
     card[i + 1] = pack[i]
 
 for i in range(1, n+1):
-    ## 1번 팩
     card_now = card[i]
-
     for j in range(i, n + 1):
-
         if dp[j] < dp[j - i] + card_now:
             dp[j] = dp[j - i] + card_now
 
