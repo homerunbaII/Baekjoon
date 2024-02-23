@@ -5,9 +5,6 @@ n, m =  map(int, input().split())
 
 graph = [list(map(int, input().split())) for _ in range(n)]
 
-dx = [1, -1, 0, 0]
-dy = [0, 0, -1 ,1]
-
 def bfs(p_lst):
     new_graph = [a[:] for a in graph]
     new_virus_location = deque([a[:] for a in virus_location])
@@ -33,18 +30,21 @@ def bfs(p_lst):
                 result += 1
     return result
 
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1 ,1]
 
 empty_location = []
 virus_location = []
+
 for x in range(n):
     for y in range(m):
         if graph[x][y] == 0:
             empty_location.append([x,y])
         if graph[x][y] == 2:
             virus_location.append([x,y])
+
 num_list = [i for i in range(len(empty_location))]
 p = list(combinations(num_list, 3))
-
 safe_zone = []
 
 for i in p:

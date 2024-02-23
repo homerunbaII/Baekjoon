@@ -55,6 +55,4 @@ while True:
             x,y = i
             graph[x][y] = new_union
 
-   
-    
 print(trial)           
