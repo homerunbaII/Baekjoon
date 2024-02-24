@@ -1,1 +1,2 @@
-print(ord('A') - ord('B'))
+dict = {}
+print(dir(dict))
