@@ -2,14 +2,16 @@
 n, m = map(int, input().split())
 tetris = [list(map(int, input().split())) for _ in range(n)]
 visited = [[0 for _ in range(m)] for _ in range(n)]
-result_list = []
+result_list = [0]
 
 dx = [1, -1, 0, 0]
 dy = [0, 0, -1, 1]
 
 def dfs(x, y, level, value):
     if level == 3:
-        result_list.append(value)
+        if result_list[0] < value:
+            result_list.pop()
+            result_list.append(value)
         return
     for i in range(4):
         nx, ny = x + dx[i], y + dy[i]
@@ -27,4 +29,5 @@ for i in range(n):
         visited[i][j] = 1
         dfs(i, j, 0, tetris[i][j])
         visited[i][j] = 0
+
 print(max(result_list))
