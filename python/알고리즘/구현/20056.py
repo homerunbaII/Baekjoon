@@ -1,6 +1,5 @@
 import sys
-input = sys.stdin.readline()
-
+input = sys.stdin.readline
 
 n , fireball , order = map(int, input().split())
 
@@ -11,22 +10,10 @@ for i in range(fireball):
     x, y = x-1, y - 1
     graph[x][y].append([m,s,d])
 
-### 7 0 1
-### 6 X 2
-### 5 4 3
-
 dx = [-1, -1, 0, 1, 1, 1, 0, -1]
 dy = [0, 1, 1, 1, 0, -1, -1, -1]
-## graph x,y 에 질량, 속도, 방향
-trial = 1
+
 for _ in range(order):
-    # print(trial, '------------------------------')
-    trial += 1
-    # for i in range(n):
-    #     for j in range(n):
-    #         print(graph[i][j], end = '     ')
-    #     print()
-    # print('11111111')
     new_graph = [[[] for _ in range(n)] for _ in range(n)]
     # 이동 수행
     for i in range(n):
@@ -40,11 +27,6 @@ for _ in range(order):
                     nx = nx % n
                     ny = ny % n
                     new_graph[nx][ny].append([m, s, d])
-    # for i in range(n):
-    #     for j in range(n):
-    #         print(new_graph[i][j], end = '     ')
-    #     print()
-    # print('22222222')
     # 파이어볼 생성
     for i in range(n):
             for j in range(n):
@@ -91,20 +73,13 @@ for _ in range(order):
                                 graph[i][j].append([next_m, next_s, (k * 2 + 1)])
                 elif len(new_graph[i][j]) == 1:
                     graph[i][j].append(new_graph[i][j].pop())
-    # for i in range(n):
-    #     for j in range(n):
-    #         print(graph[i][j], end = '     ')
-    #     print()
-    # print('33333333')
-
-                    
+              
 total_fireball = 0
 
 for i in range(n):
     for j in range(n):
         if len(graph[i][j]) != 0:
                 while graph[i][j]:
-                    # print(graph[i][j])
                     m, s, d = graph[i][j].pop()
                     total_fireball += m
 
