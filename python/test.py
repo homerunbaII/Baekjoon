@@ -1,2 +1,1 @@
-dict = {}
-print(dir(dict))
+print(-1 % 4)

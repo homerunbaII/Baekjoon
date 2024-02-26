@@ -47,7 +47,7 @@ def clean_dust_down():
     graph[x][y] = 0
 
 
-
+__name__ 
 
 n , m, t = map(int, input().split())
 dx = [1, -1, 0, 0]
@@ -81,7 +81,6 @@ for i in range(t):
 
     clean_dust_up()
     clean_dust_down()
-    print(graph)
 
 dust_cnt = 0
 for i in range(n):
@@ -90,6 +89,7 @@ for i in range(n):
             continue
         else:
             dust_cnt += graph[i][j]
+
 print(dust_cnt)
 
     
