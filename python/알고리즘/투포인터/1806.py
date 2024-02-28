@@ -7,7 +7,6 @@ p1, p2 = 0,0
 total = 0
 
 while True:
-    print(p1,p2)
     if total >= s :
         small = min(p2 - p1, small)
         total -= n_list[p1]

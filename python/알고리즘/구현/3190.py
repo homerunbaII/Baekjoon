@@ -73,19 +73,13 @@ q = deque()
 q.append([0,0,2,0])
 
 while True:
-    # print('----------------------',tm, '---------------------')
-    # for i in range(n):
-    #     print(graph[i])
-    # print()
-    # for i in range(n):
-    #     print(turn_graph[i])
-
-    # print(q)
     tm += 1
     direction = 0
+
     if tm in direction_dic:
         # 방향 갱신
         direction = direction_dic[tm]
+
     # 머리 검사
     x, y, inf, d = q.popleft()
     nx = x + dx[d]
@@ -127,15 +121,7 @@ while True:
     if die == 1:
         break
 
-
 print(tm) 
 
-
-
-
-## 사과 : -1
-## 머리, 몸통 : 1
-## 꼬리 : 2
-## 방향 지시 
 
 
