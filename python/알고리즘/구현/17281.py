@@ -35,6 +35,7 @@ n = int(input())
 
 result = [list(map(int, input().split())) for _ in range(n)]
 
+max_score = 0
 
 fixed_order = [1] * 9
 for i, perm in enumerate(permutations(range(2, 10), 8), start=1):

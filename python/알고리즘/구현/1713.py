@@ -9,7 +9,6 @@ order = list(map(int, input().split()))
 q = []
 
 for i in range(len(order)):
-    print(q)
     # 후보가 q 내에 있는지 없는지 체크
     checker = [0,0]
     for j in range(len(q)):

@@ -18,6 +18,5 @@ while truck_order:
 
 time += len(bridge)
 
-    
 print(time)
 
