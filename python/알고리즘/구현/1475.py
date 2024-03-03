@@ -11,8 +11,6 @@ for i in a:
     num_dict[i] += 1
 
 
-print(num_dict)
-
 if num_dict[6] % 2 == 0:
     num_dict[6] //= 2
 else:

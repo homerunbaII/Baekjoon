@@ -15,9 +15,7 @@ for i in range(n):
         else:
             heapq.heappush(maybe_rank, rank)
 mad = 0
-print(maybe_rank)
-print(real_rank)
-print('----------------')
+
 i = 0
 while i < n:
     if real_rank[i] == 0:
@@ -25,7 +23,4 @@ while i < n:
         real_rank[i] = a
         mad += abs((i + 1) - a)
     i += 1
-
-print(maybe_rank)
-print(real_rank)
 print(mad)

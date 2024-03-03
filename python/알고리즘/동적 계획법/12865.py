@@ -16,7 +16,6 @@ for item in items:
             if dp[i + w] < dp[i] + v:
                 dp[i + w] = dp[i] + v
 
-print(dp)
 print(max(dp))
 
     

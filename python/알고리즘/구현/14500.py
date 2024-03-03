@@ -16,7 +16,7 @@ def dfs(x,y, level, value):
             nx = x + dx[i]
             ny = y + dy[i]
             if 0<= nx < n and 0<= ny < m and visited[nx][ny] == 0:
-                    visited[nx][ny] = 1
+                    visited[nx][ny] = 1s
                     level += 1
                     print(nx,ny,level,'snxnylevel')
                     dfs(nx, ny, level, value + tetris[nx][ny])
