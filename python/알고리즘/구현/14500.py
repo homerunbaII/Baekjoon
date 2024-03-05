@@ -1,35 +1,37 @@
-import sys; 
-input = sys.stdin.readline
+n , m = map(int, input().split())
 
-n, m = map(int, input().split())
-tetris = [list(map(int, input().split())) for _ in range(n)]
-visited = [[0 for _ in range(m)] for _ in range(n)]
-result_list = [0]
+tetris =[list(map(int, input().split())) for _ in range(n)]
+result = [[0 for _ in range(m)] for _ in range(n)]
+
 
 dx = [1, -1, 0, 0]
-dy = [0, 0, -1, 1]
+dy = [0 ,0, -1, 1]
 
-def dfs(x, y, level, value):
+def dfs(x,y, level, value):
     if level == 3:
-        if result_list[0] < value:
-            result_list.pop()
-            result_list.append(value)
+        result_list.append([value, x, y])
         return
-    for i in range(4):
-        nx, ny = x + dx[i], y + dy[i]
-        if 0 <= nx < n and 0 <= ny < m and visited[nx][ny] == 0:
-            if level == 1:
-                visited[nx][ny] = 1
-                dfs(x, y, level + 1, value + tetris[nx][ny])
-                visited[nx][ny] = 0
-            visited[nx][ny] = 1
-            dfs(nx, ny, level + 1, value + tetris[nx][ny])
-            visited[nx][ny] = 0
-
+    else:
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if 0<= nx < n and 0<= ny < m and visited[nx][ny] == 0:
+                    visited[nx][ny] = 1s
+                    level += 1
+                    print(nx,ny,level,'snxnylevel')
+                    dfs(nx, ny, level, value + tetris[nx][ny])
+                    visited[nx][ny] = 0
+                    level -= 1
+                    print(nx,ny,level,'fnxnylevel')
+    
 for i in range(n):
     for j in range(m):
+        visited = [[0 for _ in range(m)] for _ in range(n)]
         visited[i][j] = 1
-        dfs(i, j, 0, tetris[i][j])
-        visited[i][j] = 0
-
-print(max(result_list))
+        result_list = []
+        level = 0
+        value = tetris[i][j]
+        lst = []
+        dfs(i,j,level, value)
+        break
+print(result_list)
