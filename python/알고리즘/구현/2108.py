@@ -12,7 +12,8 @@ for i in range(n):
         dic[k] += 1
     else :
         dic[k] = 1
-    
+
+arr.sort()
 temp = []
 
 for key, value in dic.items():
@@ -27,7 +28,6 @@ else:
         frequent = temp[0][0]
     else:
         frequent = temp[1][0]
-arr.sort()
 
 avg = int(round((sum(arr) / n)))
 middle = arr[(n // 2)]

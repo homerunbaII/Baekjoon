@@ -25,4 +25,5 @@ for i in range(maxi , min(mine) - 1, -1):
     if time < min_time :
         min_time = time
         ground_h = i
+        
 print(min_time, ground_h)
