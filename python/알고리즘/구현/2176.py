@@ -19,7 +19,7 @@ for i in range(trial):
     total = 0
     x1, y1, x2, y2 = map(int, input().split())
     for x in range(x1 - 1, x2): 
-            if y > 1 :
+            if y1 > 1 :
                 total += vec[x][y2 - 1] - vec[x][y1 - 2]
             else:
                 total += vec[x][y2 - 1]
