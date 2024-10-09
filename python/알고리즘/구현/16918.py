@@ -2,12 +2,11 @@ x, y , time = map(int,input().split())
 vec = []
 field = [[0 for i in range(y)] for _ in range(x)]
 
-dx = [1, -1, 0, 0]
-dy = [0, 0, -1, 1]
-
 for _ in range(x):
     vec.append(input())
 
+
+# 폭탄 시간으로 변환 
 for i in range(x):
     for j in range(y):
         if vec[i][j] == '.':
@@ -16,17 +15,17 @@ for i in range(x):
             field[i][j] += 2
 
 time -= 1
-
 cnt = 0
-while time:
-    print(field, time)
-    # 설치
 
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1, 1]
+
+while time:
+    # 폭탄 시간 감소
     for i in range(x):
         for j in range(y):
             if field[i][j] == 3 or field[i][j] == 2:
                 field[i][j] -= 1
-            # 폭탄이 1
             elif field [i][j] == 1:
                 field[i][j] = 0
                 for k in range(4):
@@ -37,9 +36,9 @@ while time:
                             pass
                         else:
                             field[nx][ny] = 0
-            # 폭탄이 0
             else:
                 pass
+    # 2초에 1번씩 폭탄 설치
     if cnt % 2 == 0:
         for i in range(x):
             for j in range(y):
@@ -47,7 +46,6 @@ while time:
                     field[i][j] = 3
     cnt += 1
     time -= 1 
-
 
 for i in range(x):
     for j in range(y):
