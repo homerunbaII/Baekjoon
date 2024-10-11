@@ -22,9 +22,10 @@ def bfs(start):
     while q:
         x = q.popleft()
         for i in graph[x]:
-            if visited[i] == 0 or visited[x] + 1 < visited[i]: 
-                visited[i] = visited[x] + 1
-                q.append(i)
+            if i != start:
+                if visited[i] == 0 or visited[x] + 1 < visited[i]: 
+                    visited[i] = visited[x] + 1
+                    q.append(i)
 
 bfs(start)
 

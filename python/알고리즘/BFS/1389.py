@@ -11,8 +11,6 @@ for _ in range(m):
     graph[x].append(y)
     graph[y].append(x)
 
-# [[],[3,4],[3],[1,2,4],[1,3,5],[4]]
-
 
 def bfs(start):
     visited = [0 for _ in range(n + 1)]

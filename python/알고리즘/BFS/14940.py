@@ -16,6 +16,7 @@ for i in range(n):
     for j in range(m):
         if mapp[i][j] == 2:
             start = [i,j]
+            break
 
 dx = [1, -1, 0, 0]
 dy = [0, 0, -1, 1]
