@@ -22,4 +22,7 @@ for i in d_dict:
         dbj.append(i)
 
 dbj.sort()
-print(dbj)
+
+print(len(dbj))
+for i in dbj:
+    print(i)
